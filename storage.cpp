@@ -16,6 +16,7 @@ public:
     }
 
     // Constructor with data
+    // Our node has a data and an adress next
     Node(int data)
     {
         this->data = data;
@@ -46,7 +47,7 @@ void push(int data)
         this->head = n;
         return;
     }
-
+    
     n->next = this->head;
     this->head = n;
 }
@@ -99,11 +100,14 @@ bool isEmpty() {
  * 
  * @return Returns true if successful, otherwise false (e.g. outside range)
 */
+    
 bool swap(int i, int j) {
+    //if i equal j return true without doing the swap
     if (i == j) {
         // Todo: Remove this if-case?
         return true;
     }
+    // if the list is empty return false
     if (this->head == NULL) {
         return false;
     }
@@ -113,7 +117,7 @@ bool swap(int i, int j) {
     Node * n2 = NULL;
     int k = 0;
     Node * node_i = this->head;
-
+    // we search the nodes before the nodes i and j and save them in n1 and n2
     while (node_i->next != NULL) {
         k++;
         if (i==k) {
@@ -124,7 +128,7 @@ bool swap(int i, int j) {
         }
         node_i = node_i->next;
     }
-            
+    // if n1 and n2 is not NULL , swaps i and j          
     if (n1 != NULL && n2!=NULL) {
         Node * temp = n1->next;
         n1->next = n2->next;
@@ -133,9 +137,10 @@ bool swap(int i, int j) {
         n1->next->next = n2->next->next;
         n2->next->next = temp;
         return true;
+    //if i = 0 and j =0, updates the node head and than swaps i and j
     } else if (i==0 && n2!=NULL) {
         Node * temp = this->head;
-        Node * temp2 = n2->next->next;
+        Node * temp2 = n2->next->n 
         this->head = n2->next;
         n2->next = temp;
         this->head->next = temp->next;
