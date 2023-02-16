@@ -140,7 +140,7 @@ bool swap(int i, int j) {
     //if i = 0 and j =0, updates the node head and than swaps i and j
     } else if (i==0 && n2!=NULL) {
         Node * temp = this->head;
-        Node * temp2 = n2->next->n 
+        Node * temp2 = n2->next->next; 
         this->head = n2->next;
         n2->next = temp;
         this->head->next = temp->next;
